@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+
+# Test coverage & logs
+coverage/
+*.log
+
+# Environment & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
