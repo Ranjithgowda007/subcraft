@@ -2,10 +2,10 @@
 
 > **Zero-dependency, isomorphic TypeScript engine for subtitle parsing, frame-rate retiming, and Unicode grapheme-cluster quality linting (powered by `Intl.Segmenter`).**
 
-[![npm version](https://img.shields.io/badge/npm-v0.1.0-blue.svg)](https://www.npmjs.com/package/subcraft)
+[![npm version](https://img.shields.io/badge/npm-v0.2.0-blue.svg)](https://www.npmjs.com/package/subcraft)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://www.npmjs.com/package/subcraft)
-[![Tests](https://img.shields.io/badge/tests-42%20passed-brightgreen.svg)](https://vitest.dev/)
+[![Tests](https://img.shields.io/badge/tests-51%20passed-brightgreen.svg)](https://vitest.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -120,6 +120,26 @@ const cues: SubtitleCue[] = [
 ];
 
 const srtString = stringifySRT(cues);
+```
+
+---
+
+### 3. WebVTT Parsing, Serialization & Format Conversion
+
+Parse standard WebVTT (`.vtt`) files with headers, `NOTE` comments, and placement settings (`align:middle line:90%`):
+
+```typescript
+import { parseVTT, stringifyVTT, srtToVTT, vttToSRT } from 'subcraft';
+
+// 1. Parse WebVTT
+const { cues, errors } = parseVTT(vttText);
+
+// 2. Serialize to WebVTT with custom header
+const vttOutput = stringifyVTT(cues, { header: 'English SDH' });
+
+// 3. Instant one-line bidirectional format conversion
+const webVTT = srtToVTT(rawSRT);   // Convert SRT to WebVTT
+const srtText = vttToSRT(rawVTT);   // Convert WebVTT to SRT
 ```
 
 ---

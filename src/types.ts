@@ -11,6 +11,8 @@ export interface SubtitleCue {
   end: number;
   /** Raw subtitle text content (may contain newlines) */
   text: string;
+  /** Optional WebVTT cue placement/styling settings (e.g., "align:middle line:90%") */
+  settings?: string;
 }
 
 /**

@@ -1,7 +1,7 @@
 {
   "name": "subcraft",
-  "version": "0.1.0",
-  "description": "Zero-dependency isomorphic TypeScript subtitle engine for parsing, retiming, and Unicode grapheme-cluster quality linting (powered by Intl.Segmenter).",
+  "version": "0.2.0",
+  "description": "Zero-dependency isomorphic TypeScript subtitle engine for parsing, retiming, WebVTT/SRT conversion, and Unicode grapheme-cluster quality linting (powered by Intl.Segmenter).",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
